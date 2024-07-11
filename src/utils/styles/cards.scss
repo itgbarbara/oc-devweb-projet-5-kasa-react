@@ -1,0 +1,39 @@
+.cards-container {
+    background-color: #F6F6F6;
+    border-radius: 25px;
+    padding: 40px;
+    margin: 40px 0;
+
+    // display:grid;
+    // grid-template-columns: repeat(3, 1fr);
+    // grid-template-rows: 340px;
+    // gap: 40px;
+
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 3%;
+}
+
+.card {
+    position: relative;
+    margin-bottom: 40px;
+
+    &__img {
+        width: 340px;
+        height: 340px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    &__title {
+        color: white;
+        font-size: 18px;
+        font-weight: 700;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        padding: 10px;
+
+    }
+}
