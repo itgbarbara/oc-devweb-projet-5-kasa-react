@@ -1,10 +1,15 @@
 import Layout from '../components/Layout'
-import '../utils/styles/global.scss'
+import Cards from '../components/Cards'
+import Banner from '../components/Banner'
+import banner1 from '../assets/images/banner-img-1.png'
 
 function Home() {
+  const text = 'Chez vous, partout et ailleurs'
+
   return (
     <Layout>
-      <h2>Accueil</h2>
+      <Banner bannerImg={banner1} text={text} />
+      <Cards />
     </Layout>
   )
 }
