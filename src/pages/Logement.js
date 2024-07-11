@@ -13,6 +13,7 @@ function Logement() {
   return (
     <Layout>
       <div className="fiche-container">
+        <Carousel imgSet={locations[index].pictures[0]} />
         <div className="infos-container">
           <div className="infos">
             <h2 className="infos__title">{locations[index].title}</h2>
