@@ -1,0 +1,31 @@
+@import './header.scss';
+@import './footer.scss';
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#root {
+    position: relative;
+}
+
+body {
+    background-color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.main-container {
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+li {
+    list-style: none;
+}
+
+$main-color: #FF6060;
