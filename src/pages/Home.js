@@ -8,7 +8,7 @@ function Home() {
 
   return (
     <Layout>
-      <Banner bannerImg={banner1} text={text} />
+      <Banner bannerImg={banner1} text={text} type="home" />
       <Cards />
     </Layout>
   )
