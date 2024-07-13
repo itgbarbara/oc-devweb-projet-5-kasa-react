@@ -1,5 +1,6 @@
-import Carousel from '../components/Carousel'
+import Collapse from '../components/Collapse'
 import Layout from '../components/Layout'
+import Slideshow from '../components/Slideshow'
 import locations from '../data/logements.json'
 import { useParams } from 'react-router-dom'
 
@@ -13,18 +14,20 @@ function Logement() {
   return (
     <Layout>
       <div className="fiche-container">
-        <Carousel imgSet={locations[index].pictures[0]} />
+        <Slideshow imgSet={locations[index].pictures} />
         <div className="infos-container">
           <div className="infos">
-            <h2 className="infos__title">{locations[index].title}</h2>
-            <span className="infos__location">{locations[index].location}</span>
-            <div className="infos__tags">
-              <ul>
-                <li>{locations[index].tags[0]}</li>
-                <li>{locations[index].tags[1]}</li>
-                <li>{locations[index].tags[2]}</li>
-              </ul>
+            <div>
+              <h2 className="infos__title">{locations[index].title}</h2>
+              <span className="infos__location">
+                {locations[index].location}
+              </span>
             </div>
+            <ul className="infos__tags">
+              {locations[index].tags.map((tag) => (
+                <li>{tag}</li>
+              ))}
+            </ul>
           </div>
           <div className="infos-2">
             <div className="host">
@@ -35,12 +38,22 @@ function Logement() {
                 alt=""
               />
             </div>
-            <div className="ranking">Rating : {locations[index].rating}</div>
+            <div className="rating">Ranking : {locations[index].rating}</div>
           </div>
         </div>
         <div className="description">
-          <h3 className="description__item">Description</h3>
-          <h3 className="description__item">Equipement</h3>
+          <Collapse
+            title="Description"
+            content={locations[index].description}
+            page="logement"
+          />
+          <Collapse
+            title="Equipement"
+            content={locations[index].equipments.map((equipement) => (
+              <li>{equipement}</li>
+            ))}
+            page="logement"
+          />
         </div>
       </div>
     </Layout>
