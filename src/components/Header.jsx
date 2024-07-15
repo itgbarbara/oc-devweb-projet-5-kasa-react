@@ -7,12 +7,18 @@ function Header() {
       <Link to="/">
         <img src={Logo} alt="logo Kasa" className="header__logo" />
       </Link>
-      <nav className="header__navbar">
+      <nav className="navbar">
         <ul>
-          <NavLink to="/">
+          <NavLink
+            to="/"
+            className={(navlink) => (navlink.isActive ? 'navbar__active' : '')}
+          >
             <li>Accueil</li>
           </NavLink>
-          <NavLink to="/about">
+          <NavLink
+            to="/about"
+            className={(navlink) => (navlink.isActive ? 'navbar__active' : '')}
+          >
             <li>A Propos</li>
           </NavLink>
         </ul>
