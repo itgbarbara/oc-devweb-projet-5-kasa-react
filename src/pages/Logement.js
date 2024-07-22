@@ -34,7 +34,7 @@ function Logement() {
                 ))}
               </ul>
             </div>
-            <div className="infos-2">
+            <div className="host-container">
               <div className="host">
                 <span className="host__name">{locations[index].host.name}</span>
                 <img
