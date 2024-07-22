@@ -1,14 +1,20 @@
+@import './config.scss';
+
 .footer {
+    @include centered-column;
+    width: 100%;
     color: white;
     background-color: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    font-size: 1.5rem;
     gap: 20px;
-    padding: 30px;
+    padding: 40px 120px 20px 120px;
 
 
     &__logo {
         width: 122px;
+    }
+
+    &__copyright {
+        text-align: center;
     }
 }

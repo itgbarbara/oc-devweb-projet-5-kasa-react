@@ -1,37 +1,36 @@
+@import './config.scss';
+
 .banner {
+    width: 100%;
     position: relative;
     margin-bottom: 40px;
 
     &__img {
         object-fit: cover;
-        height: 223px;
         width: 100%;
+        height: 223px;
         border-radius: 25px;
     }
 
-    &__text {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
+    &__filter {
+        // Mise en forme du filtre
+        @include filter;
+        height: 223px;
         border-radius: 25px;
         background-color: rgba(0,0,0,0.6);
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
         
-        // Mise en forme du texte (à enlever pour About)
+        // Mise en forme du texte
+        @include centered-row;
         color: white;
         text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         font-size: 48px;
-        font-weight: 700; 
-        height: 223px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        font-weight: 700;
+        padding: 55px;
     }
 
-    &--about .banner__text {
-        background-color: rgba(0,0,0,0.3);
+    &--about .banner__filter {
+        background-color: rgba(0,0,0,0.3); // Ne fonctionne pas
         box-shadow: none;
     }
 }

@@ -1,15 +1,19 @@
+@import './config.scss';
+@import './layout.scss';
 @import './header.scss';
 @import './footer.scss';
 @import './errorPage.scss';
-@import './cards.scss';
 @import './banner.scss';
+@import './cards.scss';
 @import './logement.scss';
 @import './slideshow.scss';
 @import './collapse.scss';
+@import './rating.scss';
 
-//variables :
-$main-color: #FF6060;
-
+@font-face {
+    font-family: 'Montserrat';
+    src: url(../../assets/fonts/Montserrat-Regular.ttf);
+}
 
 * {
     padding: 0;
@@ -18,16 +22,18 @@ $main-color: #FF6060;
 }
 
 body {
+    width: 100%;
+    min-height: 100vh;
     background-color: white;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; /* Remplacer par Montserrat */
+    font-family: 'Montserrat'
 }
 
 a {
     text-decoration: none;
-    color: black;
+    color: inherit;
 
     &:hover {
-        text-decoration: underline;
+        color: $main-color;
     }
 }
 
@@ -35,10 +41,8 @@ li {
     list-style: none;
 }
 
-.layout__container {
-    max-width: 1440px;
-    padding: 0 100px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }

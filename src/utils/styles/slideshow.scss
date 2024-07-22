@@ -1,6 +1,9 @@
+@import './config.scss';
+
 .slideshow {
     width: 100%;
     position: relative;
+    margin-bottom: 20px;
 
     &__img {
         width: 100%;
@@ -10,35 +13,25 @@
     }
 
     &__nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
+        @include filter;
+        @include centered-row;
     }
 
     &__btn {
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-
+        position: absolute;
+        
         &--prev {
-            position: absolute;
             left: 0;
         }
 
         &--next {
-            position: absolute;
             right: 0;
         }
     }
 
     &__count {
         color: white;
-        font-size: 18px;
+        font-size: 1.13rem;
         font-weight: 500;
         position: absolute;
         bottom: 20px;

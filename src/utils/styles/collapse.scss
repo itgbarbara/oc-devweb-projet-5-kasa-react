@@ -1,3 +1,5 @@
+@import './config.scss';
+
 .collapse {
     margin-bottom: 40px;
 
@@ -11,25 +13,31 @@
 
     &__title {
         color: white;
-        background-color: #ff6060;
+        background-color: $main-color;
         border-radius: 10px;
         font-weight: 700;
+        display: flex;
+        justify-content: space-between;
+
+        button {
+            color: white;
+        }
 
         &--logement {
-            padding: 17px;
-            font-size: 18px;
+            padding: 15px;
+            font-size: 1.13rem;
         }
 
         &--about {
             padding: 14px;
-            font-size: 24px;
+            font-size: 1.5rem;
         }
     }
 
     &__content {
-        font-size: 24px;
+        background-color: $background-color;
+        font-size: 1.13rem;
         font-weight: 100;
         padding: 25px;
-        background-color: #F6F6F6;
     }
 }

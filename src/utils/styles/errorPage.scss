@@ -1,7 +1,7 @@
+@import './config.scss';
+
 .errorpage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include centered-column;
     padding: 100px;
     gap: 100px;
 
@@ -10,8 +10,8 @@
     }
 
     &__content {
+        color: $main-color;
+        font-size: 2.25rem;
         font-weight: 500;
-        font-size: 36px;
-        color: #FF6060;
     }
 }

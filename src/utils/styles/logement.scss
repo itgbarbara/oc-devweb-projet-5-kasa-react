@@ -1,11 +1,13 @@
+@import './config.scss';
+
 .fiche-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include centered-column;
+    justify-content: space-between;
+    width: 100%;
 
     .infos-container {
-        display: flex;
         width: 100%;
+        display: flex;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 20px;
@@ -14,29 +16,28 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            margin-top: 20px;
             gap: 20px;
 
             &__title {
-                font-size: 36px;
+                color: $main-color;
+                font-size: 2.25rem;
                 font-weight: 500;
-                color: #FF6060;
             }
 
             &__location {
-                font-size: 18px;
+                font-size: 1.13rem;
                 font-weight: 500;
             }
 
             &__tags {
                 display: flex;
                 color: white;
-                font-size: 14px;
+                font-size: 0.9rem;
                 font-weight: 700;
                 gap: 10px;
 
                 li {
-                    background-color: #FF6060;
+                    background-color: $main-color;
                     min-width: 115px;
                     padding: 3px 10px;
                     border-radius: 10px;
@@ -46,20 +47,24 @@
             }
         }
 
-        .infos-2 {
+        .host-container {
             display: flex;
             flex-direction: column;
-            justify-content: flex-end;
+            // justify-content: flex-end;
+            max-width: 200px;
 
             .host {
                 display: flex;
+                justify-content: flex-end;
                 align-items: center;
-                gap: 5px;
+                gap: 10px;
 
                 &__name {
+                    padding-left: 30px;
                     font-size: 18px;
                     font-weight: 500;
-                    color: #FF6060;
+                    text-align: right;
+                    color: $main-color;
                 }
 
                 &__picture {
@@ -68,13 +73,12 @@
                 }
             }
         }
-
     }
 
     .description {
         width: 100%;
         display: flex;
         justify-content: space-between;
-        gap: 20px;
+        gap: 75px;
     }
 }
