@@ -1,5 +1,5 @@
 import activeStar from '../assets/images/star-active.svg'
-import inactiveStar from '../assets/images/start-inactive.svg'
+import inactiveStar from '../assets/images/star-inactive.svg'
 
 function Rating({ rating }) {
   const range = [1, 2, 3, 4, 5]
@@ -8,7 +8,7 @@ function Rating({ rating }) {
     <div className="rating">
       {range.map((range, index) =>
         range > rating ? (
-          <img
+          <img // remplacer par une icone font awesome ?
             src={inactiveStar}
             className="rating__active"
             alt=""
