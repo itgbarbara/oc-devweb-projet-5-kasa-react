@@ -3,11 +3,9 @@ import Footer from './Footer'
 
 function Layout({ children }) {
   return (
-    <div className="layout">
-      <div className="layout__container">
-        <Header />
-        <main>{children}</main>
-      </div>
+    <div className="body-container">
+      <Header />
+      <main className="body-container__main">{children}</main>
       <Footer />
     </div>
   )
