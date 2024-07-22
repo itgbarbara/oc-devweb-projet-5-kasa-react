@@ -5,14 +5,18 @@ function Cards() {
   return (
     <div className="cards-container">
       {locations.map((location) => (
-        <Link to={`/logement/${location.id}`} key={location.id}>
+        <Link
+          className="card-link"
+          to={`/logement/${location.id}`}
+          key={location.id}
+        >
           <article className="card">
             <img
               className="card__img"
               src={location.cover}
               alt={location.title}
             />
-            <div className="card__cover"></div>
+            <div className="card__filter"></div>
             <h2 className="card__title">{location.title}</h2>
           </article>
         </Link>
