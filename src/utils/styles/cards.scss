@@ -1,5 +1,9 @@
 @import './config.scss';
 
+$card-height-desktop: 340px;
+$card-height-tablet: 290px;
+$card-height-smartphones: 255px;
+
 .cards-container {
     width: 100%;
     background-color: $background-color;
@@ -8,13 +12,20 @@
     margin-bottom: 40px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 340px;
+    grid-template-rows: $card-height-desktop;
     gap: 40px;
 
-    @media screen and (max-width: 375px) {
+    @include for-tablets {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: $card-height-tablet;
+        padding: 30px;
+        gap: 20px;
+    }
+
+    @include for-smartphones {
         background-color: transparent;
         grid-template-columns: 100%;
-        grid-template-rows: 255px;
+        grid-template-rows: $card-height-smartphones;
         padding: 0;
         gap: 20px;
     }
@@ -28,25 +39,32 @@
     
         &__img {
             width: 100%;
-            height: 340px;
+            height: $card-height-desktop;
             object-fit: cover;
             border-radius: 10px;
 
-            @media screen and (max-width: 375px) {
-                height: 255px;
+            @include for-tablets {
+                height: $card-height-tablet;
+            }
+
+            @include for-smartphones {
+                height: $card-height-smartphones;
             }
         }
     
         &__filter {
             @include filter;
-            height: 340px;
+            height: $card-height-desktop;
             border-radius: 10px;
             background: linear-gradient(0deg, rgba(0,0,0,0.1), rgba(4,4,4,0.2), rgba(10,10,10,0), rgba(255,255,255,0));
 
-            @media screen and (max-width: 375px) {
-                height: 255px;
+            @include for-tablets {
+                height: $card-height-tablet;
             }
 
+            @include for-smartphones {
+                height: $card-height-smartphones;
+            }
         }
     
         &__title {
