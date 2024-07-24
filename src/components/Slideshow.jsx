@@ -8,7 +8,11 @@ function Slideshow({ imgSet }) {
 
   return (
     <div className="slideshow">
-      <img className="slideshow__img" src={imgSet[indexImg]} alt="" />
+      <img
+        className={`slideshow__img slideshow__img--${indexImg}`}
+        src={imgSet[indexImg]}
+        alt=""
+      />
       {nbImg > 1 && (
         <div className="slideshow__nav">
           <button
