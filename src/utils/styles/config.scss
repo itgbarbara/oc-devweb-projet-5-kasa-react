@@ -9,7 +9,12 @@ $background-color: #F6F6F6;
     padding-left: 100px;
     margin: auto;
 
-    @media screen and (max-width: 375px) {
+    @include for-tablets {
+        padding-right: 50px;
+        padding-left: 50px;
+    }
+
+    @include for-smartphones {
         padding-right: 20px;
         padding-left: 20px;
     }
@@ -39,5 +44,23 @@ $background-color: #F6F6F6;
     right: 0;
     bottom: 0;
     left: 0;
+}
+
+@mixin for-smartphones {
+    @media (max-width: 375px) {
+        @content;
+    }
+}
+
+@mixin for-small-tablets {
+    @media (max-width: 599px) {
+        @content;
+    }
+}
+
+@mixin for-tablets {
+    @media (max-width: 767.98px) {
+        @content;
+    }
 }
 

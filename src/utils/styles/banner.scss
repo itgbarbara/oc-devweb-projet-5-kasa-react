@@ -5,7 +5,7 @@
     position: relative;
     margin-bottom: 40px;
 
-    @media screen and (max-width: 375px) {
+    @include for-smartphones {
         margin-bottom: 20px;
     }
 
@@ -15,7 +15,7 @@
         height: 223px;
         border-radius: 25px;
 
-        @media screen and (max-width: 375px) {
+        @include for-smartphones {
             height: 111px;
             border-radius: 10px;
         }
@@ -38,12 +38,11 @@
         padding-left: 20px;
         padding-right: 90px;
 
-        @media screen and (max-width: 375px) {
+        @include for-smartphones {
             height: 111px;
             font-size: 1.5rem;
             border-radius: 10px;
         }
-
     }
 
     &--about .banner__filter {

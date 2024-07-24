@@ -11,8 +11,8 @@
         border-radius: 25px;
         object-fit: cover;
 
-        @media (max-width: 375px) {
-            height: 255px;
+        @include for-smartphones {
+            height: 255px; 
         }
     }
 
@@ -27,7 +27,7 @@
         img {
             height: 80px;
 
-            @media (max-width: 375px) {
+            @include for-smartphones {
                 height: 24px;
             }
         }
@@ -35,7 +35,7 @@
         &--prev {
             left: 20px;
 
-            @media (max-width: 375px) {
+            @include for-smartphones {
                 left: 5px;
             }
         }
@@ -43,8 +43,8 @@
         &--next {
             right: 20px;
 
-            @media (max-width: 375px) {
-                right: 5px;
+            @include for-smartphones {
+                right: 5px;              
             }
         }
     }
@@ -56,8 +56,8 @@
         position: absolute;
         bottom: 20px;
 
-        @media (max-width: 375px) {
-            font-size: 0.9rem;
+        @include for-smartphones {
+            font-size: 0.9rem;       
         }
     }
 }

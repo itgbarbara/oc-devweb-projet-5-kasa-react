@@ -12,11 +12,12 @@
         align-items: center;
         margin-bottom: 20px;
 
-        @media (max-width: 375px) {
-            flex-direction: column;
+        @include for-smartphones {
+            flex-direction: column;  
         }
 
         .infos {
+            width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -27,8 +28,8 @@
                 font-size: 2.25rem;
                 font-weight: 500;
 
-                @media (max-width: 375px) {
-                    font-size: 1.13rem;
+                @include for-smartphones {
+                    font-size: 1.13rem;                   
                 }
             }
 
@@ -36,20 +37,23 @@
                 font-size: 1.13rem;
                 font-weight: 500;
 
-                @media (max-width: 375px) {
-                    font-size: 0.9rem;
+                @include for-smartphones {
+                    font-size: 0.9rem;     
                 }
             }
 
             &__tags {
-                @include centered-row;
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
                 color: white;
                 font-size: 0.9rem;
                 font-weight: 700;
                 gap: 10px;
 
-                @media (max-width: 375px) {
+                @include for-smartphones {
                     font-size: 0.6rem;
+                    margin-bottom: 10px; 
                 }
 
                 li {
@@ -63,12 +67,11 @@
         }
 
         .host-container {
-            background-color: red;
             display: flex;
             flex-direction: column;
             max-width: 200px;
 
-            @media (max-width: 375px) {
+            @include for-smartphones {
                 width: 100%;
                 max-width: none;
                 flex-direction: row;
@@ -76,33 +79,35 @@
             }
 
             .host {
-                background-color: yellow;
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
                 gap: 10px;
 
-                @media (max-width: 375px) {
-                    order: 2;
+                @include for-smartphones {
+                    order: 2;                
                 }
 
                 &__name {
-                    background-color: blue;
                     padding-left: 30px;
                     font-size: 1.13rem;
                     font-weight: 500;
                     text-align: right;
                     color: $main-color;
 
-                    @media (max-width: 375px) {
+                    @include for-smartphones {
                         padding-left: 0;
-                        font-size: 0.75rem;
+                        font-size: 0.75rem;               
                     }
                 }
 
                 &__picture {
                     width: 64px;
                     border-radius: 50%;
+
+                    @include for-smartphones {
+                        width: 32px;
+                    }
                 }
             }
         }
@@ -114,9 +119,9 @@
         justify-content: space-between;
         gap: 75px;
 
-        @media (max-width: 375px) {
+        @include for-smartphones {
             flex-direction: column;
-            gap: 0px;
+            gap: 0px;       
         }
     }
 }
