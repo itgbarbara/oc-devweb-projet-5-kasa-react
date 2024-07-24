@@ -1,6 +1,7 @@
 @import './config.scss';
 
 .cards-container {
+    width: 100%;
     background-color: $background-color;
     border-radius: 25px;
     padding: 55px;
@@ -9,6 +10,14 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 340px;
     gap: 40px;
+
+    @media screen and (max-width: 375px) {
+        background-color: transparent;
+        grid-template-columns: 100%;
+        grid-template-rows: 255px;
+        padding: 0;
+        gap: 20px;
+    }
 
     .card-link {
         max-width: 340px;
@@ -22,6 +31,10 @@
             height: 340px;
             object-fit: cover;
             border-radius: 10px;
+
+            @media screen and (max-width: 375px) {
+                height: 255px;
+            }
         }
     
         &__filter {
@@ -29,6 +42,11 @@
             height: 340px;
             border-radius: 10px;
             background: linear-gradient(0deg, rgba(0,0,0,0.1), rgba(4,4,4,0.2), rgba(10,10,10,0), rgba(255,255,255,0));
+
+            @media screen and (max-width: 375px) {
+                height: 255px;
+            }
+
         }
     
         &__title {

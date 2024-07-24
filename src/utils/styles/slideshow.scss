@@ -10,6 +10,10 @@
         height: 415px;
         border-radius: 25px;
         object-fit: cover;
+
+        @media (max-width: 375px) {
+            height: 255px;
+        }
     }
 
     &__nav {
@@ -19,13 +23,29 @@
 
     &__btn {
         position: absolute;
+
+        img {
+            height: 80px;
+
+            @media (max-width: 375px) {
+                height: 24px;
+            }
+        }
         
         &--prev {
-            left: 0;
+            left: 20px;
+
+            @media (max-width: 375px) {
+                left: 5px;
+            }
         }
 
         &--next {
-            right: 0;
+            right: 20px;
+
+            @media (max-width: 375px) {
+                right: 5px;
+            }
         }
     }
 
@@ -35,5 +55,9 @@
         font-weight: 500;
         position: absolute;
         bottom: 20px;
+
+        @media (max-width: 375px) {
+            font-size: 0.9rem;
+        }
     }
 }

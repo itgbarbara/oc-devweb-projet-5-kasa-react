@@ -10,14 +10,14 @@ function Rating({ rating }) {
         range > rating ? (
           <img // remplacer par une icone font awesome ?
             src={inactiveStar}
-            className="rating__active"
+            className="rating__star rating__star--active"
             alt=""
             key={index}
           />
         ) : (
           <img
             src={activeStar}
-            className="rating__inactive"
+            className="rating__star rating__star--inactive"
             alt=""
             key={index}
           />

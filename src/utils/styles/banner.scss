@@ -5,17 +5,26 @@
     position: relative;
     margin-bottom: 40px;
 
+    @media screen and (max-width: 375px) {
+        margin-bottom: 20px;
+    }
+
     &__img {
         object-fit: cover;
         width: 100%;
         height: 223px;
         border-radius: 25px;
+
+        @media screen and (max-width: 375px) {
+            height: 111px;
+            border-radius: 10px;
+        }
     }
 
     &__filter {
         // Mise en forme du filtre
         @include filter;
-        height: 223px;
+        height: 223px; // Sinon dépasse de l'image
         border-radius: 25px;
         background-color: rgba(0,0,0,0.6);
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -24,13 +33,21 @@
         @include centered-row;
         color: white;
         text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        font-size: 48px;
+        font-size: 3rem;
         font-weight: 700;
-        padding: 55px;
+        padding-left: 20px;
+        padding-right: 90px;
+
+        @media screen and (max-width: 375px) {
+            height: 111px;
+            font-size: 1.5rem;
+            border-radius: 10px;
+        }
+
     }
 
     &--about .banner__filter {
-        background-color: rgba(0,0,0,0.3); // Ne fonctionne pas
+        background-color: rgba(0,0,0,0.3);
         box-shadow: none;
     }
 }

@@ -1,7 +1,16 @@
 @import './config.scss';
 
 .rating {
+    background-color: green;
     display: flex;
     justify-content: space-around;
     margin: 15px 0;
+    
+    &__star {
+        width: 24px;
+
+        @media (max-width: 375px) {
+            width: 18px;
+        }
+    }
 }

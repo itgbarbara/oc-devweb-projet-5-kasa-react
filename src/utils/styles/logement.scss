@@ -12,6 +12,10 @@
         align-items: center;
         margin-bottom: 20px;
 
+        @media (max-width: 375px) {
+            flex-direction: column;
+        }
+
         .infos {
             display: flex;
             flex-direction: column;
@@ -22,19 +26,31 @@
                 color: $main-color;
                 font-size: 2.25rem;
                 font-weight: 500;
+
+                @media (max-width: 375px) {
+                    font-size: 1.13rem;
+                }
             }
 
             &__location {
                 font-size: 1.13rem;
                 font-weight: 500;
+
+                @media (max-width: 375px) {
+                    font-size: 0.9rem;
+                }
             }
 
             &__tags {
-                display: flex;
+                @include centered-row;
                 color: white;
                 font-size: 0.9rem;
                 font-weight: 700;
                 gap: 10px;
+
+                @media (max-width: 375px) {
+                    font-size: 0.6rem;
+                }
 
                 li {
                     background-color: $main-color;
@@ -42,29 +58,46 @@
                     padding: 3px 10px;
                     border-radius: 10px;
                     text-align: center;
-                    
                 }
             }
         }
 
         .host-container {
+            background-color: red;
             display: flex;
             flex-direction: column;
-            // justify-content: flex-end;
             max-width: 200px;
 
+            @media (max-width: 375px) {
+                width: 100%;
+                max-width: none;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
             .host {
+                background-color: yellow;
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
                 gap: 10px;
 
+                @media (max-width: 375px) {
+                    order: 2;
+                }
+
                 &__name {
+                    background-color: blue;
                     padding-left: 30px;
-                    font-size: 18px;
+                    font-size: 1.13rem;
                     font-weight: 500;
                     text-align: right;
                     color: $main-color;
+
+                    @media (max-width: 375px) {
+                        padding-left: 0;
+                        font-size: 0.75rem;
+                    }
                 }
 
                 &__picture {
@@ -80,5 +113,10 @@
         display: flex;
         justify-content: space-between;
         gap: 75px;
+
+        @media (max-width: 375px) {
+            flex-direction: column;
+            gap: 0px;
+        }
     }
 }

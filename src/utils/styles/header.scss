@@ -9,17 +9,35 @@
     justify-content: space-between;
     align-items: center;
 
+    @media (max-width: 375px) {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
     &__logo {
         width: 210px;
+
+        @media (max-width: 375px) {
+            width: 145px;
+        }
     }
 
     .navbar {
         font-size: 1.5rem;
         font-weight: 500;
 
+        @media (max-width: 375px) {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+
         ul {
             display: flex;
             gap: 3.5rem;
+
+            @media (max-width: 375px) {
+                gap: 1.6rem;
+            }
         }
 
         &__active{

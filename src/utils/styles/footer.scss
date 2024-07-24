@@ -9,6 +9,11 @@
     gap: 20px;
     padding: 40px 120px 20px 120px;
 
+    @media (max-width: 375px) {
+        font-size: 0.75rem;
+        padding: 50px 120px 50px 120px;
+    }
+
 
     &__logo {
         width: 122px;
