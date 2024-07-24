@@ -1,21 +1,36 @@
 import { useState } from 'react'
-import open from '../assets/images/collapse-arrow.svg'
+import collapseArrow from '../assets/images/collapse-arrow.svg'
 
-function Collapse({ title, content, page }) {
+function Collapse({ label, page, children }) {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
     <div className={`collapse collapse--${page}`}>
-      <div className={`collapse__title collapse__title--${page}`}>
-        <h3>{title}</h3>
-        <button onClick={() => (isOpen ? setIsOpen(false) : setIsOpen(true))}>
-          {isOpen ? 'Fermer' : <img src={open} alt="open" />}
+      <div className={`collapse__label collapse__label--${page}`}>
+        <h3>{label}</h3>
+        <button
+          className="label__btn"
+          onClick={() => (isOpen ? setIsOpen(false) : setIsOpen(true))}
+        >
+          {isOpen ? (
+            <img
+              className="label__btn label__btn--rotate"
+              src={collapseArrow}
+              alt="open"
+            />
+          ) : (
+            <img className="label__btn" src={collapseArrow} alt="open" />
+          )}
         </button>
       </div>
-      {isOpen && (
-        <p className={`collapse__content collapse__content--${page}`}>
-          {content}
-        </p>
+      {isOpen ? (
+        <div className="collapse__dropdown collapse__dropdown--open">
+          {children}
+        </div>
+      ) : (
+        <div className="collapse__dropdown collapse__dropdown--close">
+          {children}
+        </div>
       )}
     </div>
   )

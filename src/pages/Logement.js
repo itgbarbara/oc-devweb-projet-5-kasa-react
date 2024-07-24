@@ -47,18 +47,17 @@ function Logement() {
             </div>
           </div>
           <div className="description">
-            <Collapse
-              title="Description"
-              content={locations[index].description}
-              page="logement"
-            />
-            <Collapse
-              title="Equipement"
-              content={locations[index].equipments.map((equipement, index) => (
-                <li key={`${equipement}-${index}`}>{equipement}</li>
-              ))}
-              page="logement"
-            />
+            <Collapse label="Description" page="logement">
+              <p className="content">{locations[index].description}</p>
+            </Collapse>
+            <Collapse label="Equipement" page="logement">
+              {/* Faire un test, s'il y a bien un tableau pour faire une liste */}
+              <ul className="content">
+                {locations[index].equipments.map((equipement, index) => (
+                  <li key={`${equipement}-${index}`}>{equipement}</li>
+                ))}
+              </ul>
+            </Collapse>
           </div>
         </div>
       )}
