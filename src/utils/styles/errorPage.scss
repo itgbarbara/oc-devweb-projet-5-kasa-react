@@ -2,16 +2,20 @@
 
 .errorpage {
     @include centered-column;
-    padding: 100px;
-    gap: 100px;
+    gap: 70px;
+    margin-bottom: 70px;
 
-    &__img {
-        width: 597px;
-    }
+    // &__img {
+    //    width: 597px;
+    // }
 
     &__content {
         color: $main-color;
         font-size: 2.25rem;
         font-weight: 500;
+
+        @include for-smartphones {
+            font-size: 1.13rem;  
+        }
     }
 }
