@@ -7,17 +7,25 @@ function Header() {
       <Link to="/">
         <img src={Logo} alt="logo Kasa" className="header__logo" />
       </Link>
-      <nav className="navbar">
-        <ul>
+      <nav className="header__navbar">
+        <ul className="navlinks">
           <NavLink
             to="/"
-            className={(navlink) => (navlink.isActive ? 'navbar__active' : '')}
+            className={(navlink) =>
+              navlink.isActive
+                ? 'navlinks__link navlinks__link--active'
+                : 'navlinks__link'
+            }
           >
             <li>Accueil</li>
           </NavLink>
           <NavLink
             to="/about"
-            className={(navlink) => (navlink.isActive ? 'navbar__active' : '')}
+            className={(navlink) =>
+              navlink.isActive
+                ? 'navlinks__link navlinks__link--active'
+                : 'navlinks__link'
+            }
           >
             <li>A Propos</li>
           </NavLink>

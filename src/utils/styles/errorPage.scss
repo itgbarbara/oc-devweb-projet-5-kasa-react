@@ -3,19 +3,42 @@
 .errorpage {
     @include centered-column;
     gap: 70px;
-    margin-bottom: 70px;
+    width: 100%;
 
-    // &__img {
-    //    width: 597px;
-    // }
+    &__img {
+
+        width: 41.4%;
+        max-width: 597px;
+        min-width: 400px;
+
+        @include for-tablets {
+            width: 60.6%;
+            max-width: 400px;
+            min-width: 200px;
+        }
+
+        @include for-smartphones {
+            width: 198px;
+        }
+    }
 
     &__content {
         color: $main-color;
         font-size: 2.25rem;
         font-weight: 500;
+        text-align: center;
 
         @include for-smartphones {
-            font-size: 1.13rem;  
+            @include font-18px-500;
+        }
+    }
+
+    &__link {
+        text-decoration: underline;
+        font-size: 1.13rem;
+
+        @include for-smartphones {
+            font-size: 0.9rem;
         }
     }
 }

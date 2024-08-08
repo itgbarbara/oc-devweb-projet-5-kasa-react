@@ -5,8 +5,10 @@ import Slideshow from '../components/Slideshow'
 import Rating from '../components/Rating'
 import locations from '../data/logements.json'
 
+// Simuler un appel à l'API avec useEffect
+
 function Logement() {
-  // Récupération de l'id dans l'url
+  // Récupération de l'id qui se trouve dans l'url
   const { id } = useParams()
 
   // Méthode pour trouver l'index de l'élément dont l'id est dans l'url de la fiche logement
@@ -18,9 +20,9 @@ function Logement() {
         <Navigate to="/error" replace={true} /> // Alors on est redirigé vers la page d'erreur 404
       ) : (
         // Sinon la fiche du logement s'affiche
-        <div className="fiche-container">
+        <div className="fiche-logement">
           <Slideshow imgSet={locations[index].pictures} />
-          <div className="infos-container">
+          <div className="infos-logement">
             <div className="infos">
               <div>
                 <h2 className="infos__title">{locations[index].title}</h2>
@@ -34,7 +36,7 @@ function Logement() {
                 ))}
               </ul>
             </div>
-            <div className="host-container">
+            <div className="infos-host">
               <div className="host">
                 <span className="host__name">{locations[index].host.name}</span>
                 <img
@@ -51,7 +53,6 @@ function Logement() {
               <p className="content">{locations[index].description}</p>
             </Collapse>
             <Collapse label="Equipement" page="logement">
-              {/* Faire un test, s'il y a bien un tableau pour faire une liste */}
               <ul className="content">
                 {locations[index].equipments.map((equipement, index) => (
                   <li key={`${equipement}-${index}`}>{equipement}</li>

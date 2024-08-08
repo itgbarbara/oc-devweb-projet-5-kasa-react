@@ -3,11 +3,15 @@
 .rating {
     display: flex;
     justify-content: space-around;
-    margin: 15px 0;
-    gap: 5px;
+    margin: 0.9rem 0;
+    gap: 0.3rem;
     
     &__star {
         width: 24px;
+
+        @include for-tablets {
+            width: 20px;
+        }
 
         @include for-smartphones {
             width: 18px;        

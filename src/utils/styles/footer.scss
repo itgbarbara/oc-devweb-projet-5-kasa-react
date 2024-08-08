@@ -9,6 +9,10 @@
     gap: 20px;
     padding: 40px 120px 20px 120px;
 
+    @include for-tablets {
+        font-size: 1.13rem;
+    }
+
     @include for-smartphones {
         font-size: 0.75rem;
         padding: 50px 120px 50px 120px;

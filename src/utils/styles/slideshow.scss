@@ -3,7 +3,7 @@
 .slideshow {
     width: 100%;
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
 
     &__img {
         width: 100%;
@@ -11,13 +11,21 @@
         border-radius: 25px;
         object-fit: cover;
 
+        @include for-tablets {
+            height: 350px;
+        }
+
+        @include for-small-tablets {
+            height: 300px;
+        }
+
         @include for-smartphones {
             height: 255px; 
         }
     }
 
     &__nav {
-        @include filter;
+        @include overlay;
         @include centered-row;
     }
 
@@ -26,6 +34,10 @@
 
         img {
             height: 80px;
+
+            @include for-tablets {
+                height: 50px;
+            }
 
             @include for-smartphones {
                 height: 24px;
@@ -50,9 +62,8 @@
     }
 
     &__count {
+        @include font-18px-500;
         color: white;
-        font-size: 1.13rem;
-        font-weight: 500;
         position: absolute;
         bottom: 20px;
 

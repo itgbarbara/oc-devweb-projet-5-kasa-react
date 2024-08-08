@@ -3,45 +3,58 @@
 .header {
     @include main-layout;
     width: 100%;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 
     @include for-smartphones {
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
     }
 
     &__logo {
         width: 210px;
+
+        @include for-tablets {
+            width: 170px;
+        }
 
         @include for-smartphones {
             width: 145px;
         }
     }
 
-    .navbar {
+    &__navbar {
         font-size: 1.5rem;
         font-weight: 500;
+
+        @include for-tablets {
+            font-size: 1.25rem;
+        }
 
         @include for-smartphones {
             font-size: 0.75rem;
             text-transform: uppercase;  
         }
 
-        ul {
+        .navlinks {
             display: flex;
             gap: 3.5rem;
+
+            @include for-tablets {
+                gap: 2.6rem;
+            }
 
             @include for-smartphones {
                 gap: 1.6rem;      
             }
-        }
 
-        &__active{
-            text-decoration: underline;
+            &__link--active {
+                text-decoration: underline;
+            }
         }
     }
 }

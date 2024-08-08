@@ -1,11 +1,14 @@
 @import './config.scss';
 
 .collapse {
-    margin-bottom: 40px;
+    @include main-margin-bottom; // Remplacer par margin top ? Pour ne pas faire doublon avec le main margin bottom général
     font-size: 1.5rem;
 
+    @include for-tablets {
+        font-size: 1.13rem;
+    }
+
     @include for-smartphones {
-        margin-bottom: 10px;
         font-size: 0.8rem;
     }
 
@@ -36,6 +39,14 @@
             color: white;
             transition: transform 0.3s;
 
+            @include for-tablets {
+                width: 20px;
+            }
+
+            @include for-smartphones {
+                width: 16px;
+            }
+
             &--rotate {
                 transform: rotate(180deg)
             }
@@ -48,7 +59,7 @@
 
     &__dropdown {
         background-color: $background-color;
-        transform: translateY(-15px);
+        transform: translateY(-15px); // A changer pour format smartphone et tablette car le texte dépasse quand il remonte
         position: relative;
         z-index: 0;
         border-radius: 10px;
@@ -59,7 +70,7 @@
 
         .content {
             overflow: hidden;
-            padding: 15px;
+            padding: 15px; // Mettre en REM. Valeur à changer pour format smartphone et tablette car le texte dépasse quand il remonte
             transition: transform 0.2s ease-out, padding-bottom 0.2s ease-out;
         }
 
@@ -67,7 +78,7 @@
             grid-template-rows: 0fr;
             
             .content {
-                transform: translateY(-50px);
+                transform: translateY(-50px); // A changer pour format smartphone et tablette car le texte dépasse quand il remonte
                 padding-bottom: 0;
             }
         }
@@ -76,8 +87,8 @@
             grid-template-rows: 1fr;
 
             .content {
-                transform: translateY(15px);
-                padding-bottom: 30px;
+                transform: translateY(15px); // A changer pour format smartphone et tablette car le texte dépasse quand il remonte
+                padding-bottom: 30px; // Mettre en REM
             }
         }
     }

@@ -8,7 +8,7 @@ function Rating({ rating }) {
     <div className="rating">
       {range.map((range, index) =>
         range > rating ? (
-          <img // remplacer par une icone font awesome ?
+          <img
             src={inactiveStar}
             className="rating__star rating__star--active"
             alt=""
