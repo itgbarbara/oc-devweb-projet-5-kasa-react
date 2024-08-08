@@ -1,81 +1,65 @@
 @import './config.scss';
 
-$card-height-desktop: 340px;
-$card-height-tablet: 290px;
-$card-height-smartphones: 255px;
-
-.cards-container {
+.cards-grid {
     width: 100%;
     background-color: $background-color;
     border-radius: 25px;
     padding: 55px;
-    margin-bottom: 40px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: $card-height-desktop;
+    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+    justify-items: center;
     gap: 40px;
 
     @include for-tablets {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: $card-height-tablet;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         padding: 30px;
         gap: 20px;
     }
 
     @include for-smartphones {
         background-color: transparent;
-        grid-template-columns: 100%;
-        grid-template-rows: $card-height-smartphones;
+        grid-template-columns: 1fr;
         padding: 0;
         gap: 20px;
     }
 
     .card-link {
         max-width: 340px;
-        position: relative;
-    }
 
-    .card {
-    
-        &__img {
-            width: 100%;
-            height: $card-height-desktop;
-            object-fit: cover;
+        .card {
+            height: 100%;
+            aspect-ratio: 1 / 1;
             border-radius: 10px;
-
-            @include for-tablets {
-                height: $card-height-tablet;
-            }
-
-            @include for-smartphones {
-                height: $card-height-smartphones;
-            }
-        }
+            overflow: hidden;
+            position: relative;
     
-        &__filter {
-            @include filter;
-            height: $card-height-desktop;
-            border-radius: 10px;
-            background: linear-gradient(0deg, rgba(0,0,0,0.1), rgba(4,4,4,0.2), rgba(10,10,10,0), rgba(255,255,255,0));
-
-            @include for-tablets {
-                height: $card-height-tablet;
+            &__img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: inherit;
             }
-
-            @include for-smartphones {
-                height: $card-height-smartphones;
+        
+            &__overlay {
+                @include overlay;
+                border-radius: inherit;
+                background: linear-gradient(0deg, rgba(0,0,0,0.1), rgba(4,4,4,0.2), rgba(10,10,10,0), rgba(255,255,255,0));
             }
-        }
+        
+            &__title {
+                color: white;
+                font-size: 1.13rem;
+                font-weight: 700;
+                position: absolute;
+                left: 15px;
+                bottom: 15px;
+                right: 90px;
     
-        &__title {
-            color: white;
-            font-size: 1.13rem;
-            font-weight: 700;
-            position: absolute;
-            left: 15px;
-            bottom: 15px;
-            right: 90px;
-    
+                @include for-tablets {
+                    font-size: 0.9rem;
+                }
+        
+            }
         }
     }
 }
