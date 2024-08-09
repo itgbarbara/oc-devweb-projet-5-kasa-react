@@ -1,22 +1,28 @@
 import { Link } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+// import locations from '../data/logements.json'
+import { useContext } from 'react'
+import { DataContext } from '../utils/context/Context'
 
 function Cards() {
-  const [locations, setLocations] = useState([])
+  // // Déclaration d'une variable d'état
+  // const [locations, setLocations] = useState([])
 
-  // Simulation appel API
-  useEffect(() => {
-    fetch('/data/logements.json').then((response) =>
-      response
-        .json()
-        .then((locations) => {
-          setLocations(locations)
-        })
-        .catch((err) => {
-          console.log('Error: ', err)
-        })
-    )
-  }, [])
+  // // Simulation appel API
+  // useEffect(() => {
+  //   fetch('/data/logements.json').then((response) =>
+  //     response
+  //       .json()
+  //       .then((locations) => {
+  //         setLocations(locations)
+  //       })
+  //       .catch((err) => {
+  //         console.log('Error: ', err)
+  //       })
+  //   )
+  // }, [])
+
+  // Récupération des données grâces au contexte
+  const { locations } = useContext(DataContext)
 
   return (
     <div className="cards-grid">
