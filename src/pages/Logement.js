@@ -7,8 +7,6 @@ import Rating from '../components/Rating'
 import { useContext } from 'react'
 import { DataContext } from '../utils/context/Context'
 
-// Simuler un appel à l'API avec useEffect
-
 function Logement() {
   // Récupération de l'id qui se trouve dans l'url
   const { id } = useParams()
