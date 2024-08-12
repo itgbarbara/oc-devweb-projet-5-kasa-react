@@ -19,7 +19,7 @@ function Collapse({ label, page, children }) {
               alt="open"
             />
           ) : (
-            <img className="label__btn" src={collapseArrow} alt="open" />
+            <img className="label__btn" src={collapseArrow} alt="close" />
           )}
         </button>
       </div>
